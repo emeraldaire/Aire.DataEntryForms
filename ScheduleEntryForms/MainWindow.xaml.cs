@@ -22,6 +22,7 @@ namespace ScheduleEntryForms
     {
         public MainWindow()
         {
+            DataContext = this;
             InitializeComponent();
         }
     }

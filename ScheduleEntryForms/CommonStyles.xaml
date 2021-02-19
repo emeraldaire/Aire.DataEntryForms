@@ -1,0 +1,393 @@
+﻿
+                    <!--xmlns:enum="clr-namespace:Aire.DataProvider.Enums.EquipmentManager;assembly=Aire.DataProvider"-->
+    <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:local="clr-namespace:ScheduleEntryForms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <!-- SYSTEM COLORS -->
+    <Color x:Key="ColorPrimary2">#85b8cb</Color>
+    <Color x:Key="ColorPrimary1">#1d6a96</Color>
+    <Color x:Key="primary-1">#3bb7f7</Color>
+    <Color x:Key="dark-1">#22536d</Color>
+    <Color x:Key="primary-2">#4ec6f9</Color>
+    <Color x:Key="interior-panel-backing">white</Color>
+    <Color x:Key="primary-panel-backing">#a8e1ff</Color>
+    <Color x:Key="top-panel-background">#f7f7f7</Color>
+    <Color x:Key="system-white">white</Color>
+    <Color x:Key="system-black">black</Color>
+    <Color x:Key="disabled-button">#aaa</Color>
+
+    <!-- Action Colors -->
+    <Color x:Key="hover-to">#ff6b48</Color>
+    <!--<Color x:Key="hover-return">#f3fafe</Color>-->
+    <Color x:Key="hover-return">white</Color>
+    <Color x:Key="filecard-action-button">#3bb7f7</Color>
+
+    <!-- Status Colors -->
+    <!--<Color x:Key="overdueColor">pink</Color>-->
+    <Color x:Key="overdueColor">#ffd0c4</Color>
+    <Color x:Key="unregisteredColor">#d0d0d0</Color>
+    <Color x:Key="no-link-icon-color">#e3e3e3</Color>
+    <Color x:Key="rfi-link-color">#ff6b48</Color>
+    <Color x:Key="rfi-link-hover-color">#ff3100</Color>
+    <Color x:Key="cop-link-color">#ffcb48</Color>
+    <Color x:Key="cop-link-hover-color">#ffb700</Color>
+    <Color x:Key="note-link-color">#0b9e0b</Color>
+    <Color x:Key="note-link-hover-color">#0b9e0b</Color>
+
+    <!-- EQUIPMENT STATUS -->
+    <Color x:Key="unsubmitted">#ff3100</Color>
+    <Color x:Key="submitted">#ff8f95</Color>
+    <Color x:Key="approved">#0b9e0b</Color>
+    <Color x:Key="released">#ebd400</Color>
+    <Color x:Key="received">#4ec6f9</Color>
+    <Color x:Key="completed">#f601ff</Color>
+
+
+    <Color x:Key="HoverColor">#4ec6f9</Color>
+    <Color x:Key="DebugCheck">#a522aa</Color>
+
+    <!-- Font/Text -->
+    <Color x:Key="standardTextColor">Black</Color>
+    <Color x:Key="overdueTextColor">Crimson</Color>
+    <Color x:Key="unregisteredTextColor">#323232</Color>
+    <Color x:Key="registered-color">#a8e1ff</Color>
+
+    <!-- EMERALDGREEN TETRAD -->
+    <Color x:Key="emerald-green-primary-0">#23BD23</Color>
+    <Color x:Key="emerald-green-primary-1">#6CDB6C</Color>
+    <Color x:Key="emerald-green-primary-2">#44CB44</Color>
+    <Color x:Key="emerald-green-primary-3">#0B9E0B</Color>
+    <Color x:Key="emerald-green-primary-4">#007E00</Color>
+
+    <Color x:Key="emerald-green-secondary-1-0">#1A8E8E</Color>
+    <Color x:Key="emerald-green-secondary-1-1">#5AB7B7</Color>
+    <Color x:Key="emerald-green-secondary-1-2">#339898</Color>
+    <Color x:Key="emerald-green-secondary-1-3">#087777</Color>
+    <Color x:Key="emerald-green-secondary-1-4">#005E5E</Color>
+
+    <Color x:Key="emerald-green-secondary-2-0">#ED832B</Color>
+    <Color x:Key="emerald-green-secondary-2-1">#FFB87E</Color>
+    <Color x:Key="emerald-green-secondary-2-2">#FDA155</Color>
+    <Color x:Key="emerald-green-secondary-2-3">#C6610E</Color>
+    <Color x:Key="emerald-green-secondary-2-4">#9D4700</Color>
+
+    <Color x:Key="emerald-green-complement-0">#ED2B2B</Color>
+    <Color x:Key="emerald-green-complement-1">#FF7E7E</Color>
+    <Color x:Key="emerald-green-complement-2">#FD5555</Color>
+    <Color x:Key="emerald-green-complement-3">#C60E0E</Color>
+    <Color x:Key="emerald-green-complement-4">#9D0000</Color>
+
+    <!-- BRUSHES  ************************************************************************************************************ -->
+    <SolidColorBrush x:Key="BrushPrimary1" Color="{StaticResource primary-1}"/>
+    <SolidColorBrush x:Key="BrushPrimary2" Color="{StaticResource primary-2}"/>
+    <SolidColorBrush x:Key="BrushDark1" Color="{StaticResource dark-1}"/>
+    <SolidColorBrush x:Key="BrushSecondary1" Color="{StaticResource emerald-green-complement-0}"/>
+    <SolidColorBrush x:Key="BrushSecondary2" Color="{StaticResource emerald-green-complement-1}"/>
+    <SolidColorBrush x:Key="BrushInteriorPanelBackground" Color="{StaticResource interior-panel-backing}"/>
+    <SolidColorBrush x:Key="BrushPanelBackground" Color="{StaticResource primary-panel-backing}"/>
+    <SolidColorBrush x:Key="BrushTopPanelBackground" Color="{StaticResource top-panel-background}"/>
+    <SolidColorBrush x:Key="BrushSystemWhite" Color="{StaticResource system-white}"/>
+    <SolidColorBrush x:Key="BrushSystemBlack" Color="{StaticResource system-black}"/>
+    <SolidColorBrush x:Key="BrushDebugCheck" Color="{StaticResource DebugCheck}"/>
+    <SolidColorBrush x:Key="StandardTextColor" Color="{StaticResource standardTextColor}"/>
+
+    <!-- PROJECT FILE CARD -->
+    <SolidColorBrush x:Key="OverdueTextColor" Color="{StaticResource overdueTextColor}"/>
+    <SolidColorBrush x:Key="UnregisteredTextColor" Color="{StaticResource unregisteredTextColor}"/>
+    <SolidColorBrush x:Key="OverdueColor" Color="{StaticResource overdueColor}"/>
+    <SolidColorBrush x:Key="UnregisteredColor" Color="{StaticResource unregisteredColor}"/>
+    <SolidColorBrush x:Key="BrushHoverTo" Color="{StaticResource hover-to}"/>
+    <SolidColorBrush x:Key="BrushHoverReturn" Color="{StaticResource hover-return}"/>
+    <SolidColorBrush x:Key="RegisteredFileColor" Color="{StaticResource registered-color}"/>
+    <SolidColorBrush x:Key="ActionButtonColor" Color="{StaticResource filecard-action-button}"/>
+    <SolidColorBrush x:Key="DisabledButtonColor" Color="{StaticResource disabled-button}"/>
+
+    <!-- NOTIFICATION COLORS -->
+    <SolidColorBrush x:Key="BrushNoLinkColor" Color="{StaticResource no-link-icon-color}"/>
+    <SolidColorBrush x:Key="BrushRFILinkColor" Color="{StaticResource rfi-link-color}"/>
+    <SolidColorBrush x:Key="BrushRFILinkHoverColor" Color="{StaticResource rfi-link-hover-color}"/>
+    <SolidColorBrush x:Key="BrushCOPLinkColor" Color="{StaticResource cop-link-color}"/>
+    <SolidColorBrush x:Key="BrushCOPLinkHoverColor" Color="{StaticResource cop-link-hover-color}"/>
+    <SolidColorBrush x:Key="BrushNoteLinkColor" Color="{StaticResource note-link-color}"/>
+
+    <!-- EQUIPMENT STATUS -->
+    <SolidColorBrush x:Key="BrushUnsubmittedColor" Color="{StaticResource unsubmitted}"/>
+    <SolidColorBrush x:Key="BrushSubmittedColor" Color="{StaticResource submitted}"/>
+    <SolidColorBrush x:Key="BrushApprovedColor" Color="{StaticResource approved}"/>
+    <SolidColorBrush x:Key="BrushReleasedColor" Color="{StaticResource released}"/>
+    <SolidColorBrush x:Key="BrushReceivedColor" Color="{StaticResource received}"/>
+    <SolidColorBrush x:Key="BrushCompleteColor" Color="{StaticResource completed}"/>
+
+
+    <!-- **************************************************************************************************************************************************************-->
+    <!-- DO NOT MODIFY OR ADD ANYTHING BELOW THIS LINE *********************************************************************************************-->
+    <!-- **************************************************************************************************************************************************************-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- **************************************************************************************************************************************************************-->
+    <!-- DEFAULT SYSTEM STYLES ********************************************************************************************* -->
+    <!-- **************************************************************************************************************************************************************-->
+    
+    <!-- TEXT BOX BASE (Used by default text box style) -->
+    <Style x:Key="textBoxBase" TargetType="Control">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Control">
+                    <Border BorderThickness="1" 
+                            BorderBrush="LightGray"
+                            Background="#fafafa"
+                            CornerRadius="2">
+                        <ScrollViewer x:Name="PART_ContentHost"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- DEFAULT TEXT BOX -->
+    <Style x:Key="default-textbox" TargetType="TextBox" BasedOn="{StaticResource textBoxBase}">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <!-- DEFAULT TEXT BLOCK -->
+    <Style x:Key="default-textblock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <!-- FONT AWESOME TEXTBLOCK -->
+    <Style x:Key="font-awesome-textblock" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="/FontAwesome.Sharp;component/fonts/#Font Awesome 5 Free Solid"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="{StaticResource BrushDark1}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <!-- FONT AWESOME LINKABLE TEXTBLOCK -->
+    <Style x:Key="font-awesome-linkable-textblock" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="/FontAwesome.Sharp;component/fonts/#Font Awesome 5 Free Solid"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <!--<Setter Property="Foreground" Value="{StaticResource BrushDark1}"/>-->
+
+
+
+    <!-- DEFAULT LABEL -->
+    <Style x:Key="default-label" TargetType="Label">
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+    <!-- PASSWORD BOX -->
+    <Style TargetType="PasswordBox" BasedOn="{StaticResource textBoxBase}"/>
+
+    <!-- BUTTONS -->
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource BrushPrimary2}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <!-- Padding for text inside button -->
+        <Setter Property="Padding" Value="10 5"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="3" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!-- Set the hover color.-->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource BrushPrimary1}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <!-- GROUP BOXES -->
+    <!-- Equipment Card Container -->
+    <Style x:Key="equipment-card-container" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource BrushPanelBackground}"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="0 0 0 3"/>
+        <Setter Property="CornerRadius" Value="3"/>
+        <Setter Property="BorderBrush" Value="LightGray"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style x:Key="GroupBoxContainer" TargetType="GroupBox">
+        <Setter Property="BorderBrush" Value="{StaticResource BrushPrimary1}"/>
+        <Setter Property="Background" Value="{StaticResource BrushInteriorPanelBackground}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <!--<Setter Property="Margin" Value="4 4 4 0"/>-->
+        <Setter Property="Margin" Value="4 0 0 0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    </Style>
+
+    <Style x:Key="GroupBoxHeader" TargetType="Border">
+        <Setter Property="Background" Value="white"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BrushDark1}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Margin" Value="0 4"/>
+        <Setter Property="Padding" Value="6 2 10 2"/>
+    </Style>
+
+    <Style x:Key="GroupBoxHeaderTextBlock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="Thin"/>
+    </Style>
+
+    <!-- EQUIPMENT MANAGER STYLES -->
+    <!--HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" TextWrapping="Wrap" MaxLines="5" SpellCheck.IsEnabled="True"-->
+    <Style x:Key="CommentsBox" TargetType="TextBox">
+        <Setter Property="HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="AcceptsReturn" Value="True"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="SpellCheck.IsEnabled" Value="True"/>
+        <Setter Property="Language" Value="en-US"/>
+        <Setter Property="MaxLength" Value="255"/>
+        <Setter Property="MinHeight" Value="80"/>
+    </Style>
+
+    <!-- ACTION PANEL EXPANDERS -->
+    <!-- Expander Base -->
+    <Style x:Key="action-panel-expander" TargetType="Expander">
+        <Setter Property="Background" Value="{StaticResource BrushTopPanelBackground}"/>
+    </Style>
+
+    <!-- Expander Header TextBlock -->
+    <Style x:Key="expander-header" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Padding" Value="6"/>
+        <Setter Property="Margin" Value="0 0 0 0"/>
+    </Style>
+
+    <!-- ACTION PANEL LABELS -->
+    <Style x:Key="ActionPanelLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <Style x:Key="ActionPanelListBox" TargetType="ListBox">
+        <Setter Property="MinHeight" Value="200"/>
+        <Setter Property="MaxHeight" Value="300"/>
+    </Style>
+
+    <Style x:Key="ActionPanelListBoxTextBlock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <Style x:Key="EquipmentCardLabel" TargetType="Label">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="EquipmentCardTextBlock" TargetType="TextBlock">
+        <Setter Property="Margin" Value="3 0 3 0"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+
+    <!-- BUTTON CONTROL TEMPLATE -->
+    <Style x:Key="ActionPanelToggleButton" TargetType="ToggleButton">
+        <Setter Property="Background" Value="{StaticResource BrushPrimary2}"/>
+        <Setter Property="IsHitTestVisible" Value="True"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontSize" Value="16"/>
+        <!-- Padding for text inside button -->
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border CornerRadius="3" Margin="2" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!-- Set the hover color.-->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource BrushDebugCheck}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="EquipmentProfileToggleButton" TargetType="ToggleButton">
+        <Setter Property="Background" Value="{StaticResource BrushPrimary2}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="0 2 2 2"/>
+        <Setter Property="Padding" Value="0 0 0 4"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="MaxWidth" Value="40"/>
+        <!-- Padding for text inside button -->
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border CornerRadius="3" Margin="2" MinWidth="20" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!-- Set the hover color.-->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource BrushDebugCheck}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="actionUpload" TargetType="Border">
+        <Setter Property="Background" Value="LightGray"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="BorderBrush" Value="DarkGray"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="6"/>
+    </Style>
+
+    <!-- END EQUIPMENT MANAGER STYLES -->
+
+
+
+</ResourceDictionary>
