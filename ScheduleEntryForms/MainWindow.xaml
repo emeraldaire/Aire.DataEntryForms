@@ -4,9 +4,65 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScheduleEntryForms"
+        xmlns:controls="clr-namespace:ScheduleEntryForms.Controls"
+        
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <DockPanel 
+        LastChildFill="True" 
+        >
 
-    </Grid>
+        <Border DockPanel.Dock="Top"
+            Background="{StaticResource BrushPrimary1}" 
+            Height="60"
+            />
+
+        <controls:UserNamePanel 
+            DockPanel.Dock="Top"
+            Margin="0 10"
+            />
+        <!--<Button 
+            DockPanel.Dock="Top"
+            Height="30"
+            Width="100"
+            Content="submit1"
+            />
+
+        <Button 
+            DockPanel.Dock="Top"
+            Height="30"
+            Width="100"
+            Content="submit22"
+            />
+
+        <TextBox 
+            DockPanel.Dock="Bottom"
+            Height="30"
+            Width="100"
+            />
+        
+        <Label 
+            DockPanel.Dock="Left"
+            Height="30"
+            Width="100"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Center"
+            Background="{StaticResource BrushRFILinkColor}"
+            Foreground="AntiqueWhite"
+            FontSize="15"
+            Content="Noah"
+            />
+        
+        <Border 
+            DockPanel.Dock="Right"
+            Width="30"
+            Background="Yellow"
+            />-->
+           
+        <Border 
+            Background="{StaticResource BrushPrimary1}" 
+            />
+        
+
+    </DockPanel>
 </Window>
