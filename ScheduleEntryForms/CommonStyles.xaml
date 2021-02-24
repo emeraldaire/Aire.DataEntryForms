@@ -79,6 +79,7 @@
     <Color x:Key="emerald-green-complement-3">#C60E0E</Color>
     <Color x:Key="emerald-green-complement-4">#9D0000</Color>
 
+        
     <!-- BRUSHES  ************************************************************************************************************ -->
     <SolidColorBrush x:Key="BrushPrimary1" Color="{StaticResource primary-1}"/>
     <SolidColorBrush x:Key="BrushPrimary2" Color="{StaticResource primary-2}"/>

@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="ScheduleEntryForms.Controls.UserNamePanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScheduleEntryForms.Controls"
+             mc:Ignorable="d" 
+             Width="250"
+             >
+    <DockPanel        
+        Background="white"
+        >
+        
+        <Button
+            DockPanel.Dock="Bottom"
+            Margin="5"
+            Width="100"
+            Height="30"
+            Content="Submit"
+         />
+        
+        <DockPanel 
+            DockPanel.Dock="Top"
+            >
+            <Label DockPanel.Dock="Left" 
+                   HorizontalContentAlignment="Right"
+                   Content="User Name" 
+                   Width="100"
+                    />
+            <TextBox 
+                DockPanel.Dock="Right"
+                Text="Enter your name"
+                Margin="3"
+                />
+        </DockPanel>
+        
+        <DockPanel
+            DockPanel.Dock="Top"
+            >
+            <Label
+                DockPanel.Dock="Left"
+                HorizontalContentAlignment="Right"
+                Content="Password"
+                Width="100"
+                />
+            <TextBox
+                DockPanel.Dock="Right"
+                Text="Enter your password"
+                Margin="3"
+                />
+
+        </DockPanel>
+        
+
+
+    </DockPanel>
+</UserControl>
