@@ -1,4 +1,5 @@
 ﻿using ScheduleEntryForms.Controls;
+using ScheduleEntryForms.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,15 @@ namespace ScheduleEntryForms
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public UniversalEquipmentHeaderViewModel UniversalEquipmentHeaderViewModel { get; set; }
+
         public MainWindow()
         {
             DataContext = this;
+
+            UniversalEquipmentHeaderViewModel = new UniversalEquipmentHeaderViewModel();
+
             InitializeComponent();
         }
     }

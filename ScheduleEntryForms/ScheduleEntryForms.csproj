@@ -10,4 +10,8 @@
     <Folder Include="Forms\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FormEntryDesign\FormEntryDesign.csproj" />
+  </ItemGroup>
+
 </Project>

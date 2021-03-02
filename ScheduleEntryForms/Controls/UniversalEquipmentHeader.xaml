@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="ScheduleEntryForms.Controls.UniversalEquipmentHeader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScheduleEntryForms.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <Style x:Key="universal-header-container" TargetType="Border">
+            <Setter Property="Padding" Value="15 0"/>
+        </Style>
+
+        <Style x:Key="universal-header-textbox" TargetType="TextBox">
+            <Setter Property="FontStyle" Value="Normal"/>
+            <Setter Property="Foreground" Value="#323232"/>
+            <Setter Property="Margin" Value="0 4"/>
+
+        </Style>
+
+        <Style x:Key="universal-header-label" TargetType="TextBlock" BasedOn="{StaticResource default-textblock}">
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Setter Property="Foreground" Value="{StaticResource BrushDark1}"/>
+            <Setter Property="Background" Value="Red"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <Border Style="{StaticResource universal-header-container}" 
+        >
+        
+        <Grid Background="White"
+              >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <!--EQUIPMENT TAG-->
+            <TextBlock 
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Style="{StaticResource universal-header-label}"
+                       Text="Tag"
+                       />
+            <TextBox Grid.Row="0"
+                     Grid.Column="1"
+                     Style="{StaticResource universal-header-textbox}"
+                     d:Text="FC-14"
+                     Text="{Binding EquipmentTag, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     />
+
+            <!--MANUFACTURER-->
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Style="{StaticResource universal-header-label}"
+                       Text="Manufacturer"
+                       />
+
+            <TextBox Grid.Row="1"
+                     Grid.Column="1"
+                     Style="{StaticResource universal-header-textbox}"
+                     d:Text="Mitsubishi"
+                     />
+
+            <!--MODEL-->
+            <TextBlock Grid.Row="2"
+                       Grid.Column="0"
+                       Style="{StaticResource universal-header-label}"
+                       Text="Model"
+                       />
+
+            <TextBox Grid.Row="2"
+                     Grid.Column="1"
+                     Style="{StaticResource universal-header-textbox}"
+                     d:Text="Model Filler"
+                     />
+
+            <!--LOCATION-->
+            <TextBlock Grid.Row="3"
+                       Grid.Column="0"
+                       Style="{StaticResource universal-header-label}"
+                       Text="Location"
+                       />
+
+            <TextBox Grid.Row="3"
+                     Grid.Column="1"
+                     Style="{StaticResource universal-header-textbox}"
+                     d:Text="Location Filler"
+                     />
+
+        </Grid>
+    </Border>
+</UserControl>
