@@ -16,7 +16,6 @@
             <Setter Property="FontStyle" Value="Normal"/>
             <Setter Property="Foreground" Value="#323232"/>
             <Setter Property="Margin" Value="0 4"/>
-
         </Style>
 
         <Style x:Key="universal-header-label" TargetType="TextBlock" BasedOn="{StaticResource default-textblock}">
@@ -24,6 +23,12 @@
             <Setter Property="Foreground" Value="{StaticResource BrushDark1}"/>
             <Setter Property="Background" Value="Red"/>
         </Style>
+
+        <!--COMBO BOX STYLE-->
+        <Style x:Key="universal-header-combobox" TargetType="ComboBox">
+            <Setter Property="Margin" Value="0 4"/>
+        </Style>
+        
     </UserControl.Resources>
     
     <Border Style="{StaticResource universal-header-container}" 
@@ -34,6 +39,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition />
@@ -63,10 +69,12 @@
                        Text="Manufacturer"
                        />
 
-            <TextBox Grid.Row="1"
-                     Grid.Column="1"
-                     Style="{StaticResource universal-header-textbox}"
-                     d:Text="Mitsubishi"
+            <ComboBox Grid.Row="1"
+                      Grid.Column="1"
+                      Style="{StaticResource universal-header-combobox}"
+                      ItemsSource="{Binding ManufacturerList, Mode=OneWay}"
+                      SelectedIndex="0"
+                      SelectedItem="{Binding SelectedManufacturer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      />
 
             <!--MODEL-->
@@ -76,10 +84,12 @@
                        Text="Model"
                        />
 
-            <TextBox Grid.Row="2"
-                     Grid.Column="1"
-                     Style="{StaticResource universal-header-textbox}"
-                     d:Text="Model Filler"
+            <ComboBox Grid.Row="2"
+                      Grid.Column="1"
+                      Style="{StaticResource universal-header-combobox}"
+                      ItemsSource="{Binding ModelList, Mode=OneWay}"
+                      SelectedIndex="0"
+                      SelectedItem="{Binding SelectedModel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      />
 
             <!--LOCATION-->
@@ -93,7 +103,15 @@
                      Grid.Column="1"
                      Style="{StaticResource universal-header-textbox}"
                      d:Text="Location Filler"
+                     Text="{Binding Location, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      />
+            
+            <!-- SUBMIT BUTTON -->
+            <Button Grid.Row="0"
+                    Grid.Column="2"
+                    Content="Submit"
+                    Command="{Binding CreateNewUnitCommand}"
+                    />
 
         </Grid>
     </Border>
