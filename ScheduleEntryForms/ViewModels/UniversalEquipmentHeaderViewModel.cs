@@ -1,5 +1,6 @@
 ﻿using FormEntryDesign;
 using Prism.Commands;
+using Prism.Events;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -9,7 +10,20 @@ namespace ScheduleEntryForms.ViewModels
 {
     public class UniversalEquipmentHeaderViewModel : ViewModelBase
     {
+        #region "Properties"
+
+        private IEventAggregator _eventAggregator;
+        private ISessionController _sessionController;
+        private string _location;
         private string _equipmentTag;
+        private List<string> _manufacturerList;
+        private List<string> _modelList;
+        private string _selectedManufacturer;
+        private string _selectedModel;
+       
+        
+
+
         public string EquipmentTag
         {
             get { return _equipmentTag; }
@@ -19,7 +33,6 @@ namespace ScheduleEntryForms.ViewModels
                 OnPropertyChanged();
             }
         }
-        private string _location;
         public string Location
         {
             get { return _location; }
@@ -29,7 +42,6 @@ namespace ScheduleEntryForms.ViewModels
                 OnPropertyChanged();
             }
         }
-        private List<string> _manufacturerList;
         public List<string> ManufacturerList
         {
             get { return _manufacturerList; }
@@ -39,7 +51,6 @@ namespace ScheduleEntryForms.ViewModels
                 OnPropertyChanged();          
             }
         }
-        private List<string> _modelList;
         public List<string> ModelList
         {
             get { return _modelList; }
@@ -49,9 +60,6 @@ namespace ScheduleEntryForms.ViewModels
                 OnPropertyChanged();
             }
         }
-
-        private string _selectedManufacturer;
-
         public string SelectedManufacturer
         {
             get { return _selectedManufacturer; }
@@ -61,9 +69,6 @@ namespace ScheduleEntryForms.ViewModels
                 OnPropertyChanged();
             }
         }
-
-        private string _selectedModel;
-
         public string SelectedModel
         {
             get { return _selectedModel; }
@@ -74,14 +79,21 @@ namespace ScheduleEntryForms.ViewModels
             }
         }
 
+        #endregion
 
-
+        #region "Commands"
 
         public ICommand CreateNewUnitCommand { get; set; }
 
+        #endregion
 
         public UniversalEquipmentHeaderViewModel()
+
         {
+            //_eventAggregator = eventAggregator;
+            //_sessionController = sessionController;
+
+
             GenerateDummyData();
             CreateNewUnitCommand = new DelegateCommand(OnCreateNewUnitExecute, OnCreateNewUnitCanExecute);
 

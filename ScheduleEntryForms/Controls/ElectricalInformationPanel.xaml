@@ -1,0 +1,187 @@
+﻿<UserControl x:Class="ScheduleEntryForms.Controls.ElectricalInformationPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScheduleEntryForms.Controls"
+             xmlns:viewmodel="clr-namespace:ScheduleEntryForms.ViewModels"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance viewmodel:ElectricalInformationPanelViewModel}"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+
+        <Style x:Key="panel-container" TargetType="Border">
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="CornerRadius" Value="10 10 0 0"/>
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1 0 0 0"/>
+        </Style>
+
+    </UserControl.Resources>
+    
+    
+    <DockPanel Background="White">
+        <Button Content="Test"
+                Width="100"
+                DockPanel.Dock="Top"
+                Command="{Binding TestDataCommand}"
+            />
+
+        <Border Style="{StaticResource panel-container}"
+            >
+            
+        <Grid Grid.IsSharedSizeScope="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"
+                                  MinWidth="100"/>
+                <ColumnDefinition Width="*"
+                                  MinWidth="100"
+                                  />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <!--VOLTPHASE-->
+            <TextBlock Grid.Row="0"
+                       Grid.Column="0"
+                       Text="Voltage/Phase"
+                      />
+            <ComboBox Grid.Row="0"
+                      Grid.Column="1"
+                      SelectedIndex="0"
+                      ItemsSource="{Binding VoltPhaseList, Mode=OneWay}"
+                      SelectedItem="{Binding SelectedVoltPhase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      />
+        
+            
+            <!--HP_WATT-->
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       Text="HP Watt"
+                       />
+
+            <TextBox   Grid.Row="1"
+                       Grid.Column="1"
+                       d:Text="Filler Text"
+                       Text="{Binding HPWatt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       />
+
+            
+            <!--FAN HP-->
+            <TextBlock Grid.Row="2"
+                       Grid.Column="0"
+                       Text="Fan HP"
+                       />
+
+            <TextBox   Grid.Row="2"
+                       Grid.Column="1"
+                       d:Text="Filler Text"
+                       Text="{Binding FanHP, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       />
+
+            
+            <!--KW-->
+            <TextBlock Grid.Row="3"
+                       Grid.Column="0"
+                       Text="Kilo Watts"
+                       />
+
+            <TextBox   Grid.Row="3"
+                       Grid.Column="1"
+                       d:Text="Filler Text"
+                       Text="{Binding KiloWatts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       />
+
+            
+            <!--Aux_kw-->
+            <TextBlock Grid.Row="4"
+                       Grid.Column="0"
+                       Text="Aux Kilo Watts"
+                       />
+
+            <TextBox   Grid.Row="4"
+                       Grid.Column="1"
+                       d:Text="Filler Text"
+                       Text="{Binding AuxKiloWatts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       />
+
+            <!--MCA-->
+            <TextBlock Grid.Row="5"
+                       Grid.Column="0"
+                       Text="MCA"
+                       ToolTip="Maximum Current Amps (MCA)"
+                       />
+
+            <TextBox   Grid.Row="5"
+                       Grid.Column="1"
+                       d:Text="Filler Text"
+                       Text="{Binding MaximumCurrentAmps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       />
+
+
+            <!--MOCP-->
+            <TextBlock Grid.Row="6"
+                       Grid.Column="0"
+                       Text="MOCP"
+                       ToolTip="Maximum Over Current Protection (MOCP)"
+                       />
+
+            <TextBox   Grid.Row="6"
+                       Grid.Column="1"
+                       TextWrapping="WrapWithOverflow"
+                       d:Text="Filler Text"
+                       Text="{Binding MaximumOverCurrentProtection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       />
+
+
+            <!--FLA-->
+            <TextBlock Grid.Row="7"
+                       Grid.Column="0"
+                       Text="Full Load Amps"
+                       />
+
+            <TextBox   Grid.Row="7"
+                       Grid.Column="1"
+                       d:Text="Filler Text"
+                       Text="{Binding FullLoadAmps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       />
+
+
+            <!--RATED AMPS-->
+            <TextBlock Grid.Row="8"
+                       Grid.Column="0"
+                       Text="Rated Amps"
+                       />
+
+            <TextBox   Grid.Row="8"
+                       Grid.Column="1"
+                       d:Text="Filler Text"
+                       Text="{Binding RatedAmps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       />
+
+
+
+        </Grid>
+        </Border>
+
+    </DockPanel>
+</UserControl>

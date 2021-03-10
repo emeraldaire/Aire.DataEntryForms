@@ -1,4 +1,5 @@
-﻿using ScheduleEntryForms.Controls;
+﻿using Prism.Events;
+using ScheduleEntryForms.Controls;
 using ScheduleEntryForms.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -25,11 +26,16 @@ namespace ScheduleEntryForms
 
         public UniversalEquipmentHeaderViewModel UniversalEquipmentHeaderViewModel { get; set; }
 
+        public ElectricalInformationPanelViewModel ElectricalInformationPanelViewModel { get; set; }
+
         public MainWindow()
         {
             DataContext = this;
 
+            
+
             UniversalEquipmentHeaderViewModel = new UniversalEquipmentHeaderViewModel();
+            ElectricalInformationPanelViewModel = new ElectricalInformationPanelViewModel();
 
             InitializeComponent();
         }

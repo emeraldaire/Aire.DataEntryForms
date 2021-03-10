@@ -21,7 +21,6 @@
         <Style x:Key="universal-header-label" TargetType="TextBlock" BasedOn="{StaticResource default-textblock}">
             <Setter Property="FontStyle" Value="Italic"/>
             <Setter Property="Foreground" Value="{StaticResource BrushDark1}"/>
-            <Setter Property="Background" Value="Red"/>
         </Style>
 
         <!--COMBO BOX STYLE-->
