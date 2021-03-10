@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Prism.Events;
+using ScheduleEntryForms.Controls;
+using ScheduleEntryForms.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +23,20 @@ namespace ScheduleEntryForms
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public UniversalEquipmentHeaderViewModel UniversalEquipmentHeaderViewModel { get; set; }
+
+        public ElectricalInformationPanelViewModel ElectricalInformationPanelViewModel { get; set; }
+
         public MainWindow()
         {
             DataContext = this;
+
+            
+
+            UniversalEquipmentHeaderViewModel = new UniversalEquipmentHeaderViewModel();
+            ElectricalInformationPanelViewModel = new ElectricalInformationPanelViewModel();
+
             InitializeComponent();
         }
     }
