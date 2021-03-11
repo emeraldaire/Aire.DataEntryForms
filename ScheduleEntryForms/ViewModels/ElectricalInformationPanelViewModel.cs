@@ -1,5 +1,6 @@
 ﻿using FormEntryDesign;
 using Prism.Commands;
+using ScheduleEntryForms.Configurations;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,9 +21,25 @@ namespace ScheduleEntryForms.ViewModels
         private double _maximumOverCurrentProtection;
         private double _fullLoadAmps;
         private double _ratedAmps;
+        private bool _hasMCA;
+        private bool _hasHPWatt;
 
 
-
+        
+        public bool HasHPWatt
+        {
+            get { return _hasHPWatt; }
+            set { _hasHPWatt = value; }
+        }
+        public bool HasMCA
+        {
+            get { return _hasMCA; }
+            set 
+            { 
+                _hasMCA = value;
+                OnPropertyChanged();
+            }
+        }
         public double RatedAmps
         {
             get { return _ratedAmps; }
@@ -117,8 +134,13 @@ namespace ScheduleEntryForms.ViewModels
 
         public ICommand TestDataCommand { get; set; }
 
-        public ElectricalInformationPanelViewModel()
+        //THIS IS THE CONTRUCTOR 
+        public ElectricalInformationPanelViewModel(IElectricalConfiguration electricalConfiguration)
         {
+
+            HasMCA = electricalConfiguration.MaximumCurrentAmps;
+            HasHPWatt = electricalConfiguration.HpWatt;
+
             TestDataCommand = new DelegateCommand(OnTestData);
 
             GenerateDummyData();
