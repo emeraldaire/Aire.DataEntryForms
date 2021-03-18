@@ -11,6 +11,8 @@
 
     <UserControl.Resources>
 
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
         <Style x:Key="panel-container" TargetType="Border">
             <Setter Property="Padding" Value="20"/>
             <Setter Property="Margin" Value="10"/>
@@ -25,6 +27,12 @@
         <Style TargetType="TextBox">
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Padding" Value="1 0 0 0"/>
+            <Setter Property="MinWidth" Value="100"/>
+        </Style>
+
+        <Style TargetType="ToggleButton">
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Margin" Value="0 0 5 0"/>
         </Style>
 
     </UserControl.Resources>
@@ -61,6 +69,7 @@
             </Grid.RowDefinitions>
             
             <!--VOLTPHASE-->
+            
             <TextBlock Grid.Row="0"
                        Grid.Column="0"
                        Text="Voltage/Phase"
@@ -74,15 +83,25 @@
         
             
             <!--HP_WATT-->
-            <TextBlock Grid.Row="1"
+
+            <DockPanel Grid.Row="1"
                        Grid.Column="0"
-                       Text="HP Watt"
-                       />
+                       LastChildFill="False"
+                       >
+                    <TextBlock DockPanel.Dock="Left" 
+                               Text="HP Watt"
+                               />
+                    <ToggleButton DockPanel.Dock="Right"
+                                  x:Name="tgHasHPWatt"
+                                  IsChecked="{Binding HasHPWatt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                />
+            </DockPanel>
 
             <TextBox   Grid.Row="1"
                        Grid.Column="1"
                        d:Text="Filler Text"
                        Text="{Binding HPWatt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding ElementName=tgHasHPWatt, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
             
@@ -125,16 +144,26 @@
                        />
 
             <!--MCA-->
-            <TextBlock Grid.Row="5"
-                       Grid.Column="0"
-                       Text="MCA"
-                       ToolTip="Maximum Current Amps (MCA)"
-                       />
+                <DockPanel Grid.Row="5" 
+                           Grid.Column="0"
+                           LastChildFill="False"
+                           >
+                    
+                    <TextBlock DockPanel.Dock="Left"
+                               Text="MCA"
+                               ToolTip="Maximum Current Amps (MCA)"
+                               />
+                    <ToggleButton DockPanel.Dock="Right"
+                                  x:Name="tgHasMCA"
+                                  IsChecked="{Binding HasMCA, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        />
+                </DockPanel>
 
             <TextBox   Grid.Row="5"
                        Grid.Column="1"
                        d:Text="Filler Text"
                        Text="{Binding MaximumCurrentAmps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding ElementName=tgHasMCA, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
 
