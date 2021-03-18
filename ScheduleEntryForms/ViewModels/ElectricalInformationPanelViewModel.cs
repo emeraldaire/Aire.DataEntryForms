@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace ScheduleEntryForms.ViewModels
 {
-    public class ElectricalInformationPanelViewModel : ViewModelBase
+    public class ElectricalInformationPanelViewModel : ViewModelBase, IElectricalInformationPanelViewModel
     {
 
         private List<string> _voltPhaseList;
@@ -25,7 +25,7 @@ namespace ScheduleEntryForms.ViewModels
         private bool _hasHPWatt;
 
 
-        
+
         public bool HasHPWatt
         {
             get { return _hasHPWatt; }
@@ -34,8 +34,8 @@ namespace ScheduleEntryForms.ViewModels
         public bool HasMCA
         {
             get { return _hasMCA; }
-            set 
-            { 
+            set
+            {
                 _hasMCA = value;
                 OnPropertyChanged();
             }
@@ -43,8 +43,8 @@ namespace ScheduleEntryForms.ViewModels
         public double RatedAmps
         {
             get { return _ratedAmps; }
-            set 
-            { 
+            set
+            {
                 _ratedAmps = value;
                 OnPropertyChanged();
             }
@@ -52,8 +52,8 @@ namespace ScheduleEntryForms.ViewModels
         public double FullLoadAmps
         {
             get { return _fullLoadAmps; }
-            set 
-            { 
+            set
+            {
                 _fullLoadAmps = value;
                 OnPropertyChanged();
             }
@@ -61,8 +61,8 @@ namespace ScheduleEntryForms.ViewModels
         public double MaximumOverCurrentProtection
         {
             get { return _maximumOverCurrentProtection; }
-            set 
-            { 
+            set
+            {
                 _maximumOverCurrentProtection = value;
                 OnPropertyChanged();
             }
@@ -70,17 +70,17 @@ namespace ScheduleEntryForms.ViewModels
         public double MaximumCurrentAmps
         {
             get { return _maximumCurrentAmps; }
-            set 
-            { 
+            set
+            {
                 _maximumCurrentAmps = value;
-                OnPropertyChanged();            
+                OnPropertyChanged();
             }
         }
         public double FanHP
         {
             get { return _fanHP; }
-            set 
-            { 
+            set
+            {
                 _fanHP = value;
                 OnPropertyChanged();
             }
@@ -88,8 +88,8 @@ namespace ScheduleEntryForms.ViewModels
         public int AuxKiloWatts
         {
             get { return _auxKiloWatts; }
-            set 
-            { 
+            set
+            {
                 _auxKiloWatts = value;
                 OnPropertyChanged();
             }
@@ -97,8 +97,8 @@ namespace ScheduleEntryForms.ViewModels
         public int KiloWatts
         {
             get { return _kiloWatts; }
-            set 
-            { 
+            set
+            {
                 _kiloWatts = value;
                 OnPropertyChanged();
             }
@@ -106,8 +106,8 @@ namespace ScheduleEntryForms.ViewModels
         public int HPWatt
         {
             get { return _hpWatt; }
-            set 
-            { 
+            set
+            {
                 _hpWatt = value;
                 OnPropertyChanged();
             }
@@ -115,17 +115,17 @@ namespace ScheduleEntryForms.ViewModels
         public string SelectedVoltPhase
         {
             get { return _selectedVoltPhase; }
-            set 
-            { 
+            set
+            {
                 _selectedVoltPhase = value;
-                OnPropertyChanged();            
+                OnPropertyChanged();
             }
         }
         public List<string> VoltPhaseList
         {
             get { return _voltPhaseList; }
-            set 
-            { 
+            set
+            {
                 _voltPhaseList = value;
                 OnPropertyChanged();
             }
@@ -135,11 +135,11 @@ namespace ScheduleEntryForms.ViewModels
         public ICommand TestDataCommand { get; set; }
 
         //THIS IS THE CONTRUCTOR 
-        public ElectricalInformationPanelViewModel(IElectricalConfiguration electricalConfiguration)
+        public ElectricalInformationPanelViewModel()
         {
 
-            HasMCA = electricalConfiguration.MaximumCurrentAmps;
-            HasHPWatt = electricalConfiguration.HpWatt;
+            //HasMCA = electricalConfiguration.MaximumCurrentAmps;
+            //HasHPWatt = electricalConfiguration.HpWatt;
 
             TestDataCommand = new DelegateCommand(OnTestData);
 
@@ -156,7 +156,7 @@ namespace ScheduleEntryForms.ViewModels
         private void GenerateDummyData()
         {
             VoltPhaseList = new List<string>()
-            { 
+            {
                 "1/120",
                 "3/120",
                 "3/360",

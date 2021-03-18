@@ -4,6 +4,6 @@ namespace ScheduleEntryForms.Configurations
 {
     public interface IEquipmentConfigurationFactory
     {
-        object CreateConfiguration(EquipmentProfileType equipmentProfileType);
+        IEquipmentConfiguration CreateEquipmentConfiguration(EquipmentProfileType equipmentProfileType);
     }
 }

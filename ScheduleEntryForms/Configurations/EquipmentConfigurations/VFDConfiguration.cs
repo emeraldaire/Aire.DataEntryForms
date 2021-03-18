@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ScheduleEntryForms.Configurations
+namespace ScheduleEntryForms.Configurations.EquipmentConfigurations
 {
-    public class VFDConfiguration
+    public class VFDConfiguration : IEquipmentConfiguration
     {
-        public ElectricalConfiguration ElectricalConfiguration { get; set; }
+        public IElectricalConfiguration ElectricalConfiguration { get; set; }
 
         public VFDConfiguration()
         {
