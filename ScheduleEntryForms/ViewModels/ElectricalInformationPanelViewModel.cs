@@ -10,6 +10,8 @@ namespace ScheduleEntryForms.ViewModels
 {
     public class ElectricalInformationPanelViewModel : ViewModelBase, IElectricalInformationPanelViewModel
     {
+        public IElectricalConfiguration ElectricalConfiguration;
+
 
         private List<string> _voltPhaseList;
         private string _selectedVoltPhase;
@@ -21,25 +23,11 @@ namespace ScheduleEntryForms.ViewModels
         private double _maximumOverCurrentProtection;
         private double _fullLoadAmps;
         private double _ratedAmps;
-        private bool _hasMCA;
-        private bool _hasHPWatt;
 
 
 
-        public bool HasHPWatt
-        {
-            get { return _hasHPWatt; }
-            set { _hasHPWatt = value; }
-        }
-        public bool HasMCA
-        {
-            get { return _hasMCA; }
-            set
-            {
-                _hasMCA = value;
-                OnPropertyChanged();
-            }
-        }
+
+
         public double RatedAmps
         {
             get { return _ratedAmps; }
@@ -135,8 +123,9 @@ namespace ScheduleEntryForms.ViewModels
         public ICommand TestDataCommand { get; set; }
 
         //THIS IS THE CONTRUCTOR 
-        public ElectricalInformationPanelViewModel()
+        public ElectricalInformationPanelViewModel(IElectricalConfiguration electricalConfiguration)
         {
+            ElectricalConfiguration = electricalConfiguration;
 
             //HasMCA = electricalConfiguration.MaximumCurrentAmps;
             //HasHPWatt = electricalConfiguration.HpWatt;

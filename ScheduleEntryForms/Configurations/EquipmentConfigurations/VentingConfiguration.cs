@@ -4,22 +4,20 @@ using System.Text;
 
 namespace ScheduleEntryForms.Configurations.EquipmentConfigurations
 {
-    public class HeaterConfiguration : IEquipmentConfiguration
+    class VentingConfiguration : IEquipmentConfiguration
     {
         public IElectricalConfiguration ElectricalConfiguration { get; set; }
 
-        public HeaterConfiguration()
+        public VentingConfiguration()
         {
-            SetElectricalConfiguration();   
+            SetElectricalConfiguration();
         }
 
         private void SetElectricalConfiguration()
         {
-            ElectricalConfiguration = new ElectricalConfiguration()
-            {
-                KiloWatts = true,
+            ElectricalConfiguration = new ElectricalConfiguration() 
+            { 
                 VoltPhase = true,
-                MaximumCurrentAmps = true
             };
         }
     }

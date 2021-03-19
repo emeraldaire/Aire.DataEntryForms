@@ -42,10 +42,24 @@ namespace ScheduleEntryForms
             
             _equipmentConfigurationFactory =  new EquipmentConfigurationFactory();
             var vfdConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.VFD);
+            var louverConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Louver);
+            var isolationConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Isolation);
             var heaterConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Heater);
-            var rtuHeatPumpConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.RTUHeatPump);
             var grdConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.GRD);
+            var rtuHeatPumpConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.RTUHeatPump);
             var rtuGasConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.RTUGas);
+            var gasFurnaceConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.GasFurnace);
+            var miniSplitConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.MiniSplit);
+
+            var ihpFanCoilUnitsConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.IHPFanCoilUnits);
+            var ohpHeatPumpUnitsConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.OHPHeatPumpUnits);
+            var ventingConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Venting);
+            var fanConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Fan);
+            var ervConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.ERV);
+            var damperConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Damper);
+            var branchControllerConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.BranchController);
+            var waterSourceHeatPumpConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.WaterSourceHeatPump);
+            var vavConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.VAV);
 
 
             ElectricalInformationPanelViewModel = new ElectricalInformationPanelViewModel();
