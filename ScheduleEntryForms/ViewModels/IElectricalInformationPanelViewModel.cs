@@ -8,8 +8,7 @@ namespace ScheduleEntryForms.ViewModels
         int AuxKiloWatts { get; set; }
         double FanHP { get; set; }
         double FullLoadAmps { get; set; }
-        bool HasHPWatt { get; set; }
-        bool HasMCA { get; set; }
+
         int HPWatt { get; set; }
         int KiloWatts { get; set; }
         double MaximumCurrentAmps { get; set; }
