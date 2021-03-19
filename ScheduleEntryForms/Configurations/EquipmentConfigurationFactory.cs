@@ -14,27 +14,27 @@ namespace ScheduleEntryForms.Configurations
             switch (equipmentProfileType)
             {
                 case EquipmentProfileType.VAV:
-                    return null;
+                    return new VAVConfiguration();
                 case EquipmentProfileType.WaterSourceHeatPump:
-                    return null;
+                    return new WaterSourceHeatPumpConfiguration();
                 case EquipmentProfileType.BranchController:
-                    return null;
+                    return new BranchControllerConfiguration();
                 case EquipmentProfileType.Damper:
-                    return null;
+                    return new DamperConfiguration();
                 case EquipmentProfileType.ERV:
-                    return null;
+                    return new ERVConfiguration();
                 case EquipmentProfileType.Fan:
-                    return null;
+                    return new FanConfiguration();
                 case EquipmentProfileType.Venting:
-                    return null;
+                    return new VentingConfiguration();
                 case EquipmentProfileType.OHPHeatPumpUnits:
-                    return null;
+                    return new OHPHeatPumpUnitsConfiguration();
                 case EquipmentProfileType.IHPFanCoilUnits:
-                    return null;
+                    return new IHPFanCoilUnitsConfiguration();
                 case EquipmentProfileType.MiniSplit:
-                    return null;
+                    return new MiniSplitConfiguration();
                 case EquipmentProfileType.GasFurnace:
-                    return null;
+                    return new GasFurnaceConfiguration();
                 case EquipmentProfileType.RTUGas:
                     return new RTUGasConfiguration();
                 case EquipmentProfileType.RTUHeatPump:
@@ -44,9 +44,9 @@ namespace ScheduleEntryForms.Configurations
                 case EquipmentProfileType.Heater:
                     return new HeaterConfiguration();
                 case EquipmentProfileType.Isolation:
-                    return null;
+                    return new IsolationConfiguration();
                 case EquipmentProfileType.Louver:
-                    return null;
+                    return new LouverConfiguration();
                 case EquipmentProfileType.VFD:
                     return new VFDConfiguration();
                 default:
