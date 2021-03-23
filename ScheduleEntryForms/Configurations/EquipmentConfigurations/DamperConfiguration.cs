@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ScheduleEntryForms.Configurations.EquipmentConfigurations
 {
-    class DamperConfiguration : IEquipmentConfiguration
+    public class DamperConfiguration : IEquipmentConfiguration
     {
         public IElectricalConfiguration ElectricalConfiguration { get; set; }
 
