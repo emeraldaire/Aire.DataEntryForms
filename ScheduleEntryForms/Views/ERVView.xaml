@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="ScheduleEntryForms.Views.ERVView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScheduleEntryForms.Views"
+             xmlns:controls="clr-namespace:ScheduleEntryForms.Controls"
+             xmlns:viewmodels="clr-namespace:ScheduleEntryForms.ViewModels"
+             d:DataContext="{d:DesignInstance viewmodels:ERVViewModel}"
+             mc:Ignorable="d" 
+             d:Width="800"
+             >
+    <StackPanel Background="white">
+        <controls:ElectricalInformationPanel
+            DataContext="{Binding ElectricalPanelViewModel}"
+            />
+        <Border Background="red" Height="1200"/>
+
+    </StackPanel>
+</UserControl>

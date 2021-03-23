@@ -1,14 +1,12 @@
-﻿<UserControl x:Class="ScheduleEntryForms.Controls.ElectricalInformationPanel"
+﻿<UserControl x:Class="ScheduleEntryForms.Controls.HeatingCoolingPanel"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ScheduleEntryForms.Controls"
-             xmlns:viewmodel="clr-namespace:ScheduleEntryForms.ViewModels"
-             xmlns:config="clr-namespace:ScheduleEntryForms.Configurations"
              mc:Ignorable="d" 
-             d:DataContext="{d:DesignInstance viewmodel:ElectricalPanelViewModel}"
              d:DesignHeight="450" d:DesignWidth="800">
+
 
     <UserControl.Resources>
 
@@ -37,8 +35,8 @@
         </Style>
 
     </UserControl.Resources>
-    
-    
+
+
     <DockPanel Background="White">
         <Button Content="Test"
                 Width="100"
@@ -54,46 +52,46 @@
             />
         <Border Style="{StaticResource panel-container}"
             >
-            
-        <Grid Grid.IsSharedSizeScope="True">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"
+
+            <Grid Grid.IsSharedSizeScope="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"
                                   MinWidth="100"/>
-                <ColumnDefinition Width="*"
+                    <ColumnDefinition Width="*"
                                   MinWidth="100"
                                   />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            
-            <!--VOLTPHASE-->
-            
-            <TextBlock Grid.Row="0"
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!--VOLTPHASE-->
+
+                <TextBlock Grid.Row="0"
                        Grid.Column="0"
                        Text="Voltage/Phase"
                        Visibility="{Binding ElectricalConfiguration.VoltPhase, Converter={StaticResource BooleanToVisibilityConverter}}"
                       />
-            <ComboBox Grid.Row="0"
+                <ComboBox Grid.Row="0"
                       Grid.Column="1"
                       SelectedIndex="0"
                       ItemsSource="{Binding VoltPhaseList, Mode=OneWay}"
                       SelectedItem="{Binding SelectedVoltPhase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                       Visibility="{Binding ElectricalConfiguration.VoltPhase, Converter={StaticResource BooleanToVisibilityConverter}}"
                       />
-        
-            
-            <!--HP_WATT-->
 
-            <DockPanel Grid.Row="1"
+
+                <!--HP_WATT-->
+
+                <DockPanel Grid.Row="1"
                        Grid.Column="0"
                        LastChildFill="False"
                        Visibility="{Binding ElectricalConfiguration.HpWatt, Converter={StaticResource BooleanToVisibilityConverter}}"
@@ -106,67 +104,67 @@
                                   x:Name="tgHasHPWatt"
                                   IsChecked="{Binding HasHPWatt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                 />-->
-            </DockPanel>
+                </DockPanel>
 
-            <TextBox   Grid.Row="1"
+                <TextBox   Grid.Row="1"
                        Grid.Column="1"
                        d:Text="Filler Text"
                        Text="{Binding HPWatt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                        Visibility="{Binding ElectricalConfiguration.HpWatt, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
-            
-            <!--FAN HP-->
-            <TextBlock Grid.Row="2"
+
+                <!--FAN HP-->
+                <TextBlock Grid.Row="2"
                        Grid.Column="0"
                        Text="Fan HP"
                        Visibility="{Binding ElectricalConfiguration.FanHP, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
-            <TextBox   Grid.Row="2"
+                <TextBox   Grid.Row="2"
                        Grid.Column="1"
                        d:Text="Filler Text"
                        Text="{Binding FanHP, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                        Visibility="{Binding ElectricalConfiguration.FanHP, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
-            
-            <!--KW-->
-            <TextBlock Grid.Row="3"
+
+                <!--KW-->
+                <TextBlock Grid.Row="3"
                        Grid.Column="0"
                        Text="Kilo Watts"
                        Visibility="{Binding ElectricalConfiguration.KiloWatts, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
-            <TextBox   Grid.Row="3"
+                <TextBox   Grid.Row="3"
                        Grid.Column="1"
                        d:Text="Filler Text"
                        Text="{Binding KiloWatts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                        Visibility="{Binding ElectricalConfiguration.KiloWatts, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
-            
-            <!--Aux_kw-->
-            <TextBlock Grid.Row="4"
+
+                <!--Aux_kw-->
+                <TextBlock Grid.Row="4"
                        Grid.Column="0"
                        Text="Aux Kilo Watts"
                        Visibility="{Binding ElectricalConfiguration.AuxKiloWatts, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
-            <TextBox   Grid.Row="4"
+                <TextBox   Grid.Row="4"
                        Grid.Column="1"
                        d:Text="Filler Text"
                        Text="{Binding AuxKiloWatts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                        Visibility="{Binding ElectricalConfiguration.AuxKiloWatts, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
-            <!--MCA-->
+                <!--MCA-->
                 <DockPanel Grid.Row="5" 
                            Grid.Column="0"
                            LastChildFill="False"
                        Visibility="{Binding ElectricalConfiguration.MaximumCurrentAmps, Converter={StaticResource BooleanToVisibilityConverter}}"
                            >
-                    
+
                     <TextBlock DockPanel.Dock="Left"
                                Text="MCA"
                                ToolTip="Maximum Current Amps (MCA)"
@@ -177,24 +175,24 @@
                         />-->
                 </DockPanel>
 
-            <TextBox   Grid.Row="5"
+                <TextBox   Grid.Row="5"
                        Grid.Column="1"
                        d:Text="Filler Text"
                        Text="{Binding MaximumCurrentAmps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                        Visibility="{Binding ElectricalConfiguration.MaximumCurrentAmps, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
-                       <!--Visibility="{Binding ElementName=tgHasMCA, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}"-->
+                <!--Visibility="{Binding ElementName=tgHasMCA, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}"-->
 
 
-            <!--MOCP-->
-            <TextBlock Grid.Row="6"
+                <!--MOCP-->
+                <TextBlock Grid.Row="6"
                        Grid.Column="0"
                        Text="MOCP"
                        ToolTip="Maximum Over Current Protection (MOCP)"
                        Visibility="{Binding ElectricalConfiguration.MaximumOverCurrentProtection, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
-            <TextBox   Grid.Row="6"
+                <TextBox   Grid.Row="6"
                        Grid.Column="1"
                        TextWrapping="WrapWithOverflow"
                        d:Text="Filler Text"
@@ -203,14 +201,14 @@
                        />
 
 
-            <!--FLA-->
-            <TextBlock Grid.Row="7"
+                <!--FLA-->
+                <TextBlock Grid.Row="7"
                        Grid.Column="0"
                        Text="Full Load Amps"
                        Visibility="{Binding ElectricalConfiguration.FullLoadAmps, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
-            <TextBox   Grid.Row="7"
+                <TextBox   Grid.Row="7"
                        Grid.Column="1"
                        d:Text="Filler Text"
                        Text="{Binding FullLoadAmps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -218,14 +216,14 @@
                        />
 
 
-            <!--RATED AMPS-->
-            <TextBlock Grid.Row="8"
+                <!--RATED AMPS-->
+                <TextBlock Grid.Row="8"
                        Grid.Column="0"
                        Text="Rated Amps"
                        Visibility="{Binding ElectricalConfiguration.RatedAmps, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
-            <TextBox   Grid.Row="8"
+                <TextBox   Grid.Row="8"
                        Grid.Column="1"
                        d:Text="Filler Text"
                        Text="{Binding RatedAmps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -234,7 +232,7 @@
 
 
 
-        </Grid>
+            </Grid>
         </Border>
 
     </DockPanel>

@@ -8,9 +8,9 @@ using System.Windows.Input;
 
 namespace ScheduleEntryForms.ViewModels
 {
-    public class ElectricalInformationPanelViewModel : ViewModelBase, IElectricalInformationPanelViewModel
+    public class ElectricalPanelViewModel : ViewModelBase, IElectricalInformationPanelViewModel
     {
-        public IElectricalConfiguration ElectricalConfiguration;
+        public IElectricalConfiguration ElectricalConfiguration { get; set; }
 
 
         private List<string> _voltPhaseList;
@@ -123,7 +123,7 @@ namespace ScheduleEntryForms.ViewModels
         public ICommand TestDataCommand { get; set; }
 
         //THIS IS THE CONTRUCTOR 
-        public ElectricalInformationPanelViewModel(IElectricalConfiguration electricalConfiguration)
+        public ElectricalPanelViewModel(IElectricalConfiguration electricalConfiguration)
         {
             ElectricalConfiguration = electricalConfiguration;
 

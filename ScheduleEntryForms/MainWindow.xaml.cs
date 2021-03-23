@@ -27,8 +27,8 @@ namespace ScheduleEntryForms
     {
 
         public UniversalEquipmentHeaderViewModel UniversalEquipmentHeaderViewModel { get; set; }
-        public ElectricalInformationPanelViewModel ElectricalInformationPanelViewModel { get; set; }
         private IEquipmentConfigurationFactory _equipmentConfigurationFactory { get; set; }
+        public ERVViewModel ERVViewModel { get; set; }
 
         public MainWindow()
         {
@@ -41,29 +41,30 @@ namespace ScheduleEntryForms
             //The point of individual Equipment Configuration is to control the specific visibilities for that equipment
             
             _equipmentConfigurationFactory =  new EquipmentConfigurationFactory();
-            var vfdConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.VFD);
-            var louverConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Louver);
-            var isolationConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Isolation);
-            var heaterConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Heater);
-            var grdConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.GRD);
-            var rtuHeatPumpConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.RTUHeatPump);
-            var rtuGasConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.RTUGas);
-            var gasFurnaceConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.GasFurnace);
-            var miniSplitConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.MiniSplit);
-
-            var ihpFanCoilUnitsConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.IHPFanCoilUnits);
-            var ohpHeatPumpUnitsConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.OHPHeatPumpUnits);
-            var ventingConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Venting);
-            var fanConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Fan);
             var ervConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.ERV);
-            var damperConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Damper);
-            var branchControllerConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.BranchController);
-            var waterSourceHeatPumpConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.WaterSourceHeatPump);
-            var vavConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.VAV);
+            var electricalPanelViewModelFactory = new ElectricalPanelViewModelFactory();
+
+            ERVViewModel = new ERVViewModel(ervConfiguration, electricalPanelViewModelFactory);
 
 
-            ElectricalInformationPanelViewModel = new ElectricalInformationPanelViewModel();
+            //var vfdConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.VFD);
+            //var louverConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Louver);
+            //var isolationConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Isolation);
+            //var heaterConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Heater);
+            //var grdConfiguration = _equipmentConfigurationFactory.CreatequipmentConfiguration(EquipmentProfileType.GRD);
+            //var rtuHeatPumpConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.RTUHeatPump);
+            //var rtuGasConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.RTUGas);
+            //var gasFurnaceConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.GasFurnace);
+            //var miniSplitConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.MiniSplit);
 
+            //var ihpFanCoilUnitsConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.IHPFanCoilUnits);
+            //var ohpHeatPumpUnitsConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.OHPHeatPumpUnits);
+            //var ventingConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Venting);
+            //var fanConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Fan);
+            //var damperConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.Damper);
+            //var branchControllerConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.BranchController);
+            //var waterSourceHeatPumpConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.WaterSourceHeatPump);
+            //var vavConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.VAV);
 
             InitializeComponent();
         }
