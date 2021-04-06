@@ -7,6 +7,6 @@ namespace ScheduleEntryForms.Configurations
     public interface IEquipmentConfiguration
     {
         IElectricalConfiguration ElectricalConfiguration { get; set; }
-        //IHeatingCoolingConfiguration HeatingCoolingConfiguration { get; set; }
+        IHeatingCoolingConfiguration HeatingCoolingConfiguration { get; set; }
     }
 }

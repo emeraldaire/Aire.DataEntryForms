@@ -43,8 +43,9 @@ namespace ScheduleEntryForms
             _equipmentConfigurationFactory =  new EquipmentConfigurationFactory();
             var ervConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.ERV);
             var electricalPanelViewModelFactory = new ElectricalPanelViewModelFactory();
+            var heatingCoolingPanelViewModelFactory = new HeatingCoolingPanelViewModelFactory();
 
-            ERVViewModel = new ERVViewModel(ervConfiguration, electricalPanelViewModelFactory);
+            ERVViewModel = new ERVViewModel(ervConfiguration, electricalPanelViewModelFactory, heatingCoolingPanelViewModelFactory);
 
 
             //var vfdConfiguration = _equipmentConfigurationFactory.CreateEquipmentConfiguration(EquipmentProfileType.VFD);

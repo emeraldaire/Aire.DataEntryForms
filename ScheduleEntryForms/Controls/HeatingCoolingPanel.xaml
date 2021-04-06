@@ -93,13 +93,20 @@
                        Text="AFUE"
                        Visibility="{Binding ElectricalConfiguration.VoltPhase, Converter={StaticResource BooleanToVisibilityConverter}}"
                       />
-                <ComboBox Grid.Row="1"
+                <!--<ComboBox Grid.Row="1"
                       Grid.Column="1"
                       SelectedIndex="0"
                       ItemsSource="{Binding VoltPhaseList, Mode=OneWay}"
                       SelectedItem="{Binding SelectedVoltPhase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                       Visibility="{Binding ElectricalConfiguration.VoltPhase, Converter={StaticResource BooleanToVisibilityConverter}}" Height="26" Grid.RowSpan="2" VerticalAlignment="Top"
-                      />
+                      />-->
+
+                <TextBox   Grid.Row="1"
+                       Grid.Column="1"
+                       d:Text="Filler Text"
+                       Text="{Binding HPWatt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding ElectricalConfiguration.HpWatt, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       />
 
 
                 <!--NUMBER OF STAGES-->
