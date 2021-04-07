@@ -4,7 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ScheduleEntryForms.Controls"
+             xmlns:viewmodel="clr-namespace:ScheduleEntryForms.ViewModels"
              mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance viewmodel:HeatingCoolingPanelViewModel}"
              d:DesignHeight="480" d:DesignWidth="800">
 
 
@@ -91,7 +93,7 @@
                 <TextBlock Grid.Row="1"
                        Grid.Column="0"
                        Text="AFUE"
-                       Visibility="{Binding ElectricalConfiguration.VoltPhase, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Visibility="{Binding HeatingCoolingConfiguration.HeatingAFUE, Converter={StaticResource BooleanToVisibilityConverter}}"
                       />
                 <!--<ComboBox Grid.Row="1"
                       Grid.Column="1"
@@ -104,8 +106,8 @@
                 <TextBox   Grid.Row="1"
                        Grid.Column="1"
                        d:Text="Filler Text"
-                       Text="{Binding HPWatt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                       Visibility="{Binding ElectricalConfiguration.HpWatt, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Text="{Binding HeatingAFUE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding HeatingCoolingConfiguration.HeatingAFUE, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
 
@@ -114,11 +116,11 @@
                 <DockPanel Grid.Row="2"
                        Grid.Column="0"
                        LastChildFill="False"
-                       Visibility="{Binding ElectricalConfiguration.HpWatt, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Visibility="{Binding HeatingCoolingConfiguration.HeatingNumberOfStages, Converter={StaticResource BooleanToVisibilityConverter}}"
                        >
                     <TextBlock DockPanel.Dock="Left" 
                                Text="Number of Stages"
-                       Visibility="{Binding ElectricalConfiguration.HpWatt, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Visibility="{Binding HeatingCoolingConfiguration.HeatingNumberOfStages, Converter={StaticResource BooleanToVisibilityConverter}}"
                                />
                     <!--<ToggleButton DockPanel.Dock="Right"
                                   x:Name="tgHasHPWatt"
@@ -129,8 +131,8 @@
                 <TextBox   Grid.Row="2"
                        Grid.Column="1"
                        d:Text="Filler Text"
-                       Text="{Binding HPWatt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                       Visibility="{Binding ElectricalConfiguration.HpWatt, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Text="{Binding HeatingNumberOfStages, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding HeatingCoolingConfiguration.HeatingNumberOfStages, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
 
@@ -138,14 +140,14 @@
                 <TextBlock Grid.Row="3"
                        Grid.Column="0"
                        Text="Input MBH"
-                       Visibility="{Binding ElectricalConfiguration.FanHP, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Visibility="{Binding HeatingCoolingConfiguration.HeatingInputMBH, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
                 <TextBox   Grid.Row="3"
                        Grid.Column="1"
                        d:Text="Filler Text"
-                       Text="{Binding FanHP, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                       Visibility="{Binding ElectricalConfiguration.FanHP, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Text="{Binding HeatingInputMBH, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding HeatingCoolingConfiguration.HeatingInputMBH, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
 
@@ -153,14 +155,14 @@
                 <TextBlock Grid.Row="4"
                        Grid.Column="0"
                        Text="Output MBH"
-                       Visibility="{Binding ElectricalConfiguration.KiloWatts, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Visibility="{Binding HeatingCoolingConfiguration.HeatingOutputMBH, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
                 <TextBox   Grid.Row="4"
                        Grid.Column="1"
                        d:Text="Filler Text"
-                       Text="{Binding KiloWatts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                       Visibility="{Binding ElectricalConfiguration.KiloWatts, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Text="{Binding HeatingOutputMBH, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding HeatingCoolingConfiguration.HeatingOutputMBH, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
 
@@ -168,21 +170,21 @@
                 <TextBlock Grid.Row="5"
                        Grid.Column="0"
                        Text="MBH"
-                       Visibility="{Binding ElectricalConfiguration.AuxKiloWatts, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Visibility="{Binding HeatingCoolingConfiguration.HeatingMBH, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
                 <TextBox   Grid.Row="5"
                        Grid.Column="1"
                        d:Text="Filler Text"
-                       Text="{Binding AuxKiloWatts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                       Visibility="{Binding ElectricalConfiguration.AuxKiloWatts, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Text="{Binding HeatingMBH, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding HeatingCoolingConfiguration.HeatingMBH, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
                 <!--HSPF COP-->
                 <DockPanel Grid.Row="6" 
                            Grid.Column="0"
                            LastChildFill="False"
-                       Visibility="{Binding ElectricalConfiguration.MaximumCurrentAmps, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Visibility="{Binding HeatingCoolingConfiguration.HeatingHSPF, Converter={StaticResource BooleanToVisibilityConverter}}"
                            >
 
                     <TextBlock DockPanel.Dock="Left"
@@ -198,8 +200,8 @@
                 <TextBox   Grid.Row="6"
                        Grid.Column="1"
                        d:Text="Filler Text"
-                       Text="{Binding MaximumCurrentAmps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                       Visibility="{Binding ElectricalConfiguration.MaximumCurrentAmps, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Text="{Binding HeatingHSPF, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding HeatingCoolingConfiguration.HeatingHSPF, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
                 <!--Visibility="{Binding ElementName=tgHasMCA, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}"-->
 
@@ -209,15 +211,15 @@
                        Grid.Column="0"
                        Text="Aux Kilo Watts"
                        ToolTip="Maximum Over Current Protection (MOCP)"
-                       Visibility="{Binding ElectricalConfiguration.MaximumOverCurrentProtection, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Visibility="{Binding HeatingCoolingConfiguration.HeatingAuxKiloWatts, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
                 <TextBox   Grid.Row="7"
                        Grid.Column="1"
                        TextWrapping="WrapWithOverflow"
                        d:Text="Filler Text"
-                       Text="{Binding MaximumOverCurrentProtection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                       Visibility="{Binding ElectricalConfiguration.MaximumOverCurrentProtection, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Text="{Binding HeatingAuxKiloWatts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding HeatingCoolingConfiguration.HeatingAuxKiloWatts, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
                 <TextBlock  Grid.Row="8"
@@ -233,14 +235,14 @@
                 <TextBlock Grid.Row="9"
                        Grid.Column="0"
                        Text="Tons"
-                       Visibility="{Binding ElectricalConfiguration.FullLoadAmps, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Visibility="{Binding HeatingCoolingConfiguration.CoolingTons, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
                 <TextBox   Grid.Row="9"
                        Grid.Column="1"
                        d:Text="Filler Text"
-                       Text="{Binding FullLoadAmps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                       Visibility="{Binding ElectricalConfiguration.FullLoadAmps, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Text="{Binding CoolingTons, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding HeatingCoolingConfiguration.CoolingTons, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
 
@@ -248,42 +250,42 @@
                 <TextBlock Grid.Row="10"
                        Grid.Column="0"
                        Text="MBH"
-                       Visibility="{Binding ElectricalConfiguration.RatedAmps, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Visibility="{Binding HeatingCoolingConfiguration.CoolingMBH, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
                 <TextBox   Grid.Row="10"
                        Grid.Column="1"
                        d:Text="Filler Text"
-                       Text="{Binding RatedAmps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                       Visibility="{Binding ElectricalConfiguration.RatedAmps, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Text="{Binding CoolingMBH, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding HeatingCoolingConfiguration.CoolingMBH, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
                 <!--SEER EER-->
                 <TextBlock Grid.Row="11"
                        Grid.Column="0"
                        Text="SEER_eer"
-                       Visibility="{Binding ElectricalConfiguration.RatedAmps, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Visibility="{Binding HeatingCoolingConfiguration.CoolingSEER_EER, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
                 <TextBox   Grid.Row="11"
                        Grid.Column="1"
                        d:Text="Filler Text"
-                       Text="{Binding RatedAmps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                       Visibility="{Binding ElectricalConfiguration.RatedAmps, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Text="{Binding CoolingSEER_EER, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding HeatingCoolingConfiguration.CoolingSEER_EER, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
                 <!--SEER-->
                 <TextBlock Grid.Row="12"
                        Grid.Column="0"
                        Text="SEER"
-                       Visibility="{Binding ElectricalConfiguration.RatedAmps, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Visibility="{Binding HeatingCoolingConfiguration.CoolingSEER, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
                 <TextBox   Grid.Row="12"
                        Grid.Column="1"
                        d:Text="Filler Text"
-                       Text="{Binding RatedAmps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                       Visibility="{Binding ElectricalConfiguration.RatedAmps, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Text="{Binding CoolingSEER, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding HeatingCoolingConfiguration.CoolingSEER, Converter={StaticResource BooleanToVisibilityConverter}}"
                        />
 
 
