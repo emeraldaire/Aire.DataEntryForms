@@ -4,9 +4,10 @@ using System.Text;
 
 namespace ScheduleEntryForms.Configurations.EquipmentConfigurations
 {
-    class VAVConfiguration : IEquipmentConfiguration
+    public class VAVConfiguration : IEquipmentConfiguration
     {
         public IElectricalConfiguration ElectricalConfiguration { get; set; }
+        public IHeatingCoolingConfiguration HeatingCoolingConfiguration { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public VAVConfiguration()
         {

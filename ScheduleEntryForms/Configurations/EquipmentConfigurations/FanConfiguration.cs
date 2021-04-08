@@ -4,13 +4,22 @@ using System.Text;
 
 namespace ScheduleEntryForms.Configurations.EquipmentConfigurations
 {
-    class FanConfiguration : IEquipmentConfiguration
+    public class FanConfiguration : IEquipmentConfiguration
     {
         public IElectricalConfiguration ElectricalConfiguration { get; set; }
-
+        public IHeatingCoolingConfiguration HeatingCoolingConfiguration { get; set; }
         public FanConfiguration()
         {
             SetElectricalConfiguration();
+            SetHeatingCoolingConfiguration();
+        }
+
+
+        private void SetHeatingCoolingConfiguration()
+        {
+            HeatingCoolingConfiguration = new HeatingCoolingConfiguration()
+            {
+            };
         }
 
         private void SetElectricalConfiguration()

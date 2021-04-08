@@ -8,12 +8,20 @@ namespace ScheduleEntryForms.Configurations.EquipmentConfigurations
     public class RTUHeatPumpConfiguration : IEquipmentConfiguration
     {
         public IElectricalConfiguration ElectricalConfiguration { get; set; }
+        public IHeatingCoolingConfiguration HeatingCoolingConfiguration { get ; set; }
 
         public RTUHeatPumpConfiguration()
         {
             SetElectricalConfiguration();
+            SetHeatingCoolingConfiguration();
         }
 
+        private void SetHeatingCoolingConfiguration()
+        {
+            HeatingCoolingConfiguration = new HeatingCoolingConfiguration()
+            {
+            };
+        }
 
         private void SetElectricalConfiguration()
         {

@@ -9,13 +9,24 @@ namespace ScheduleEntryForms.ViewModels
 {
     public class ERVViewModel : ViewModelBase, IERVViewModel
     {
-        public IEquipmentConfiguration EquipmentConfiguration;
-        public IElectricalInformationPanelViewModel ElectricalPanelViewModel;
+        public IEquipmentConfiguration _equipmentConfiguration;
+        public IElectricalPanelViewModelFactory _electricalPanelViewModelFactory;
+        public IHeatingCoolingPanelViewModelFactory _heatingCoolingPanelViewModelFactory;
+        public ElectricalPanelViewModel ElectricalPanelViewModel { get; set; }
+        public HeatingCoolingPanelViewModel HeatingCoolingPanelViewModel { get; set; }
 
-        public ERVViewModel(IEquipmentConfiguration equipmentConfiguration, IElectricalInformationPanelViewModel electricalPanelViewModel)
+
+        public ERVViewModel(IEquipmentConfiguration equipmentConfiguration, 
+                            IElectricalPanelViewModelFactory electricalPanelViewModelFactory,
+                            IHeatingCoolingPanelViewModelFactory heatingCoolingPanelViewModelFactory
+                            )
         {
-            EquipmentConfiguration = equipmentConfiguration;
-            ElectricalPanelViewModel = electricalPanelViewModel;
+            _equipmentConfiguration = equipmentConfiguration;
+            _electricalPanelViewModelFactory = electricalPanelViewModelFactory;
+            _heatingCoolingPanelViewModelFactory = heatingCoolingPanelViewModelFactory;
+
+            ElectricalPanelViewModel = _electricalPanelViewModelFactory.CreateViewModel(_equipmentConfiguration.ElectricalConfiguration);
+            HeatingCoolingPanelViewModel = _heatingCoolingPanelViewModelFactory.CreateViewModel(_equipmentConfiguration.HeatingCoolingConfiguration);
         }
 
         public async Task LoadAsync()

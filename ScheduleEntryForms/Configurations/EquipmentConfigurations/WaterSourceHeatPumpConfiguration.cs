@@ -4,9 +4,10 @@ using System.Text;
 
 namespace ScheduleEntryForms.Configurations.EquipmentConfigurations
 {
-    class WaterSourceHeatPumpConfiguration : IEquipmentConfiguration
+    public class WaterSourceHeatPumpConfiguration : IEquipmentConfiguration
     {
         public IElectricalConfiguration ElectricalConfiguration { get; set; }
+        public IHeatingCoolingConfiguration HeatingCoolingConfiguration { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public WaterSourceHeatPumpConfiguration()
         {

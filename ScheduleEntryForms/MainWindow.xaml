@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScheduleEntryForms"
         xmlns:controls="clr-namespace:ScheduleEntryForms.Controls"
+        xmlns:views="clr-namespace:ScheduleEntryForms.Views"
         d:DataContext="{d:DesignInstance local:MainWindow}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -17,10 +18,10 @@
                               />
         </Grid.ColumnDefinitions>
 
-        <controls:ElectricalInformationPanel
+        <!--<controls:ElectricalInformationPanel
                 Grid.Column="2"
                 DataContext="{Binding ElectricalInformationPanelViewModel}"
-                />
+                />-->
 
 
 
@@ -41,9 +42,10 @@
                 DataContext="{Binding UniversalEquipmentHeaderViewModel}"
                 />
 
-            <controls:ElectricalInformationPanel
+
+            <views:ERVView
                 DockPanel.Dock="Top"
-                DataContext="{Binding ElectricalInformationPanelViewModel}"
+                DataContext="{Binding ERVViewModel}"
                 />
 
 
